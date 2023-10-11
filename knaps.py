@@ -27,7 +27,7 @@ st.write("**Nama  : Dhita Aprilia Dhamayanti**")
 st.write("**NIM   : 200411100102**")
 st.write("**Kelas : PPW A**")
 st.write("-------------------------------------------------------------------------------------------------------------------------")
-upload_data, preporcessing, modeling, implementation = st.tabs(["Upload Data", "Preprocessing", "Modeling"])
+upload_data, preporcessing, modeling = st.tabs(["Upload Data", "Preprocessing", "Modeling"])
 
 
 with upload_data:
