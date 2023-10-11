@@ -21,7 +21,7 @@ from sklearn.utils.validation import joblib
 
 
 
-st.title("DATA MINING")
+st.title("PENCARIAN DAN PENAMBANGAN WEB")
 st.write("-------------------------------------------------------------------------------------------------------------------------")
 st.write("**Nama  : Dhita Aprilia Dhamayanti**")
 st.write("**NIM   : 200411100102**")
