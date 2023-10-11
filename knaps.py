@@ -129,13 +129,13 @@ with modeling:
 
         # Fitting Naive Bayes Classification to the Training set with linear kernel
         gaussian = GaussianNB()
-        gaussian = gaussian.fit(X_train, y_train)
+        gaussian = gaussian.fit(training, training_label)
 
         # Predicting the Test set results
-        y_pred = gaussian.predict(X_test)
+        y_pred = gaussian.predict(test)
     
         y_compare = np.vstack((test_label,y_pred)).T
-        gaussian.predict_proba(X_test)
+        gaussian.predict_proba(test)
         gaussian_akurasi = round(100 * accuracy_score(test_label, y_pred))
         # akurasi = 10
 
