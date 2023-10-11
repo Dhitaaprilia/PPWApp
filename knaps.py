@@ -50,7 +50,7 @@ with preporcessing :
     """)
     df = df.drop(columns=["Dokumen"])
     #Mendefinisikan Varible X dan Y
-    X = df.drop(columns=['Cluster'])
+    X = df.drop(columns=['Topik 1', 'Topik 2', 'Topik 3'])
     y = df['Cluster'].values
     df
     X
