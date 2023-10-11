@@ -10,7 +10,7 @@ from datetime import datetime
 st.title('Prediksi Harga Emas Menggunakan Metode Linear Regression')
 
 # Mendapatkan data harga emas dari URL
-df = pd.read_csv('https://raw.githubusercontent.com/DwiAqilahP/kolaborasipro/main/PTRO.JK.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/Dhitaaprilia/dataset/main/LDA%20K-Means%20(1).csv')
 df.isnull().sum()
 df['Open'] = df['Open'].fillna(value=df['Open'].median())
 df['High'] = df['High'].fillna(value=df['High'].median())
