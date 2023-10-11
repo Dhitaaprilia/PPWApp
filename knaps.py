@@ -42,9 +42,6 @@ with preporcessing :
     st.write("""# Preprocessing""")
     st.subheader("""Normalisasi Data""")
     st.write("""Rumus Normalisasi Data :""")
-    from PIL import Image
-    image = Image.open('rumus.jpeg')
-    st.image(image, use_column_width=False, width=250)
     st.markdown("""
     Dimana :
     - X = data yang akan dinormalisasi atau data asli
@@ -152,7 +149,7 @@ with modeling:
         # gaussian_akurasi = round(100 * accuracy_score(test_label,probas))
 
         #KNN
-        K=10
+        K=3
         knn=KNeighborsClassifier(n_neighbors=K)
         knn.fit(training,training_label)
         knn_predict=knn.predict(test)
