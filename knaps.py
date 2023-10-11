@@ -62,9 +62,8 @@ with preporcessing :
     #scaler.fit(features)
     #scaler.transform(features)
     scaled = scaler.fit_transform(X)
-    features_names = X.columns.copy()
     #features_names.remove('label')
-    scaled_features = pd.DataFrame(scaled, columns=features_names)
+    scaled_features = pd.DataFrame(scaled, columns=['Topik 1', 'Topik 2', 'Topik 3'])
 
     st.subheader('Hasil Normalisasi Data')
     st.write(scaled_features)
