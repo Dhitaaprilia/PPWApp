@@ -136,7 +136,7 @@ with modeling:
     
         y_compare = np.vstack((test_label,y_pred)).T
         gaussian.predict_proba(test)
-        gaussian_akurasi = accuracy_score(test_label, y_pred)
+        gaussian_akurasi = round(100 * accuracy_score(test_label, y_pred))
         # akurasi = 10
 
         #Gaussian Naive Bayes
@@ -155,7 +155,7 @@ with modeling:
         knn.fit(training,training_label)
         knn_predict=knn.predict(test)
 
-        knn_akurasi =accuracy_score(test_label,knn_predict)
+        knn_akurasi = round(100 * accuracy_score(test_label,knn_predict))
 
         #Decission Tree
         dt = DecisionTreeClassifier()
