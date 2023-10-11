@@ -38,26 +38,6 @@ with upload_data:
         st.write("Nama File Anda = ", uploaded_file.name)
         st.dataframe(df)
 
-with desc:
-    st.write("""# Deskripsi""")
-    st.write("Dataset ini adalah dataset menengenai penyakit cardiovascular. Kardiovaskular atau Cardiovascular Disease (CVD) merupakan penyakit yang berkaitan dengan jantung dan pembuluh darah. Pada dataset ini terdapat 70.000 data.")
-    st.write("Dataset ini diambil dari https://www.kaggle.com/code/ekramasif/cardiovasculardiseasepredictionusingml")
-    st.subheader("""Fitur""")
-    st.write("[1].  Age")
-    st.write("[2].  Height")
-    st.write("[3].  Weight")
-    st.write("[4].  Gender")
-    st.write("[5].  Ap_hi (Systolic Blood Pressure)")
-    st.write("[6].  Ap_lo (Diastolic Blood Pressure)")
-    st.write("[7].  Cholesterol")
-    st.write("[8].  Gluc (Glucose)")
-    st.write("[9].  Smoke (Smoking)")
-    st.write("[10]. Alco (Alcohol)")
-    st.write("[11]. Active (Physical Activity)")
-    st.subheader("""Fungsi""")
-    st.write("Aplikasi ini berfungsi untuk menentukan penyakit Cardiovascular.")
-    st.write("Source Code dapat diakses melalui https://github.com/Dhitaaprilia/DataminingApp.git")
-
 with preporcessing :
     st.write("""# Preprocessing""")
     st.subheader("""Normalisasi Data""")
