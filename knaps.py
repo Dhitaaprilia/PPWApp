@@ -50,7 +50,7 @@ with preporcessing :
     """)
     df = df.drop(columns=["Dokumen"])
     #Mendefinisikan Varible X dan Y
-    X = df.drop(columns=['Topik 1', 'Topik 2', 'Topik 3'])
+    X = df.drop(columns=['Topik 1'])
     y = df['Cluster'].values
     df
     X
@@ -63,7 +63,7 @@ with preporcessing :
     #scaler.transform(features)
     scaled = scaler.fit_transform(X)
     #features_names.remove('label')
-    scaled_features = pd.DataFrame(scaled, columns=['Topik 1', 'Topik 2', 'Topik 3'])
+    scaled_features = pd.DataFrame(scaled, columns=['Topik 1'])
 
     st.subheader('Hasil Normalisasi Data')
     st.write(scaled_features)
