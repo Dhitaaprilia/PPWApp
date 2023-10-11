@@ -136,7 +136,7 @@ with modeling:
     
         y_compare = np.vstack((test_label,y_pred)).T
         gaussian.predict_proba(test)
-        gaussian_akurasi = round(100 * accuracy_score(test_label, y_pred))
+        gaussian_akurasi = accuracy_score(test_label, y_pred)
         # akurasi = 10
 
         #Gaussian Naive Bayes
