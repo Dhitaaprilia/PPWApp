@@ -51,10 +51,10 @@ with preporcessing :
     - min = nilai minimum semua data asli
     - max = nilai maksimum semua data asli
     """)
-    df = df.drop(columns=["id"])
+    df = df.drop(columns=["Dokumen"])
     #Mendefinisikan Varible X dan Y
-    X = df.drop(columns=['cardio'])
-    y = df['cardio'].values
+    X = df.drop(columns=['Cluster'])
+    y = df['Cluster'].values
     df
     X
     df_min = X.min()
@@ -73,10 +73,10 @@ with preporcessing :
     st.write(scaled_features)
 
     st.subheader('Target Label')
-    dumies = pd.get_dummies(df.cardio).columns.values.tolist()
+    dumies = pd.get_dummies(df.Cluster).columns.values.tolist()
     dumies = np.array(dumies)
 
-    labels = pd.get_dummies(df.cardio).columns.values.tolist()
+    labels = pd.get_dummies(df.Cluster).columns.values.tolist()
 
     st.write(labels)
 
