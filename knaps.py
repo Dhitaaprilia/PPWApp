@@ -115,7 +115,8 @@ with preporcessing :
 
 with modeling:
     st.write("""# Modeling""")
-    X_train, X_test, y_train, y_test, test_label = train_test_split(X, y, test_size=0.2, random_state=42)
+    training, test = train_test_split(scaled_features,test_size=0.2, random_state=1)#Nilai X training dan Nilai X testing
+    training_label, test_label = train_test_split(y, test_size=0.2, random_state=1)#Nilai Y training dan Nilai Y testing
     with st.form("modeling"):
         st.write("Pilihlah model yang akan dilakukan pengecekkan akurasi:")
         naive = st.checkbox('Gaussian Naive Bayes')
