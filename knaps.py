@@ -115,8 +115,8 @@ with preporcessing :
 
 with modeling:
     st.write("""# Modeling""")
-    training, test = train_test_split(scaled_features,test_size=0.2, random_state=42)#Nilai X training dan Nilai X testing
-    training_label, test_label = train_test_split(y, test_size=0.2, random_state=42)#Nilai Y training dan Nilai Y testing
+    training, test = train_test_split(scaled_features,test_size=0.2, random_state=1)#Nilai X training dan Nilai X testing
+    training_label, test_label = train_test_split(y, test_size=0.2, random_state=1)#Nilai Y training dan Nilai Y testing
     with st.form("modeling"):
         st.write("Pilihlah model yang akan dilakukan pengecekkan akurasi:")
         naive = st.checkbox('Gaussian Naive Bayes')
@@ -155,7 +155,7 @@ with modeling:
         knn.fit(training,training_label)
         knn_predict=knn.predict(test)
 
-        knn_akurasi = round(100 * accuracy_score(test_label,knn_predict))
+        knn_akurasi =accuracy_score(test_label,knn_predict)
 
         #Decission Tree
         dt = DecisionTreeClassifier()
