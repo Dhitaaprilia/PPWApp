@@ -40,7 +40,7 @@ with upload_data:
 
 with modeling:
     st.write("""# Modeling""")
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Memisahkan data menjadi data latih dan data uji
+    
     with st.form("modeling"):
         st.write("Pilihlah model yang akan dilakukan pengecekkan akurasi:")
         naive = st.checkbox('Gaussian Naive Bayes')
@@ -54,6 +54,8 @@ with modeling:
         # Memisahkan fitur dan label kelas target
         X = output_proporsi_TD[['Topik 1', 'Topik 2', 'Topik 3']]
         y = output_proporsi_TD['Cluster']  # Gantilah 'Kelas_Target' dengan nama kolom yang sesuai untuk label kelas target
+
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Memisahkan data menjadi data latih dan data uji
 
         # Fitting Naive Bayes Classification to the Training set with linear kernel
         # Membuat model Naive Bayes
@@ -81,6 +83,13 @@ with modeling:
         # gaussian_akurasi = round(100 * accuracy_score(test_label,probas))
 
         #KNN
+        # Memisahkan fitur dan label kelas target
+        X = output_proporsi_TD[['Topik 1', 'Topik 2', 'Topik 3']]
+        y = output_proporsi_TD['Cluster']  # Gantilah 'Kelas_Target' dengan nama kolom yang sesuai untuk label kelas target
+
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Memisahkan data menjadi data latih dan data uji
+
+        
         neigh = KNeighborsClassifier(n_neighbors=3)
         knn = neigh.fit(X_train, y_train)
         y_pred_knn = knn.predict(X_test)
@@ -89,6 +98,13 @@ with modeling:
         print("Akurasi:", knn_akurasi)
 
         #Decission Tree
+        # Memisahkan fitur dan label kelas target
+        X = output_proporsi_TD[['Topik 1', 'Topik 2', 'Topik 3']]
+        y = output_proporsi_TD['Cluster']  # Gantilah 'Kelas_Target' dengan nama kolom yang sesuai untuk label kelas target
+
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Memisahkan data menjadi data latih dan data uji
+
+        
         clf = tree.DecisionTreeClassifier()
         decision_tree = clf.fit(X_train, y_train)
 
