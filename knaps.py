@@ -83,7 +83,7 @@ with modeling:
         #KNN
         neigh = KNeighborsClassifier(n_neighbors=3)
         knn = neigh.fit(X_train, y_train)
-       y_pred_knn = knn.predict(X_test)
+        y_pred_knn = knn.predict(X_test)
 
         accuracy = accuracy_score(y_test, y_pred_knn)
         print("Akurasi:", accuracy)
