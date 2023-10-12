@@ -66,8 +66,8 @@ with modeling:
         predictions = naive_bayes.predict(X_test)
         
         # Mengukur akurasi model
-        accuracy = accuracy_score(y_test, predictions)
-        print("Akurasi Naive Bayes:", accuracy)
+        gaussian_akurasi = accuracy_score(y_test, predictions)
+        print("Akurasi Naive Bayes:", gaussian_akurasi)
         # akurasi = 10
 
         #Gaussian Naive Bayes
@@ -85,8 +85,8 @@ with modeling:
         knn = neigh.fit(X_train, y_train)
         y_pred_knn = knn.predict(X_test)
 
-        accuracy = accuracy_score(y_test, y_pred_knn)
-        print("Akurasi:", accuracy)
+        knn_akurasi = accuracy_score(y_test, y_pred_knn)
+        print("Akurasi:", knn_akurasi)
 
         #Decission Tree
         clf = tree.DecisionTreeClassifier()
@@ -94,8 +94,8 @@ with modeling:
 
         y_pred_clf = decision_tree.predict(X_test)
 
-        accuracy = accuracy_score(y_test, y_pred_clf)
-        print("Akurasi:", accuracy)
+        dt_akurasi = accuracy_score(y_test, y_pred_clf)
+        print("Akurasi:", dt_akurasi)
 
         if submitted :
             if naive :
