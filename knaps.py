@@ -27,7 +27,7 @@ st.write("**Nama  : Dhita Aprilia Dhamayanti**")
 st.write("**NIM   : 200411100102**")
 st.write("**Kelas : PPW A**")
 st.write("-------------------------------------------------------------------------------------------------------------------------")
-upload_data, preporcessing, modeling = st.tabs(["Upload Data", "Preprocessing", "Modeling"])
+upload_data, modeling = st.tabs(["Upload Data", "Modeling"])
 
 
 with upload_data:
@@ -81,20 +81,21 @@ with modeling:
         # gaussian_akurasi = round(100 * accuracy_score(test_label,probas))
 
         #KNN
-        K=3
-        knn=KNeighborsClassifier(n_neighbors=K)
-        knn.fit(training,training_label)
-        knn_predict=knn.predict(test)
+        neigh = KNeighborsClassifier(n_neighbors=3)
+        knn = neigh.fit(X_train, y_train)
+       y_pred_knn = knn.predict(X_test)
 
-        knn_akurasi = round(100 * accuracy_score(test_label,knn_predict))
+        accuracy = accuracy_score(y_test, y_pred_knn)
+        print("Akurasi:", accuracy)
 
         #Decission Tree
-        dt = DecisionTreeClassifier()
-        dt.fit(training, training_label)
-        # prediction
-        dt_pred = dt.predict(test)
-        #Accuracy
-        dt_akurasi = round(100 * accuracy_score(test_label,dt_pred))
+        clf = tree.DecisionTreeClassifier()
+        decision_tree = clf.fit(X_train, y_train)
+
+        y_pred_clf = decision_tree.predict(X_test)
+
+        accuracy = accuracy_score(y_test, y_pred_clf)
+        print("Akurasi:", accuracy)
 
         if submitted :
             if naive :
