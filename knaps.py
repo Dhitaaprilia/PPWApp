@@ -51,9 +51,7 @@ with modeling:
         # NB
         GaussianNB(priors=None)
 
-        # Memisahkan fitur dan label kelas target
-        X = output_proporsi_TD[['Topik 1', 'Topik 2', 'Topik 3']]
-        y = output_proporsi_TD['Cluster']  # Gantilah 'Kelas_Target' dengan nama kolom yang sesuai untuk label kelas target
+        # Memisahkan fitur dan label kelas target  # Gantilah 'Kelas_Target' dengan nama kolom yang sesuai untuk label kelas target
 
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42) # Memisahkan data menjadi data latih dan data uji
 
