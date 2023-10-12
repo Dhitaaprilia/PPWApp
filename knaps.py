@@ -49,7 +49,6 @@ with modeling:
         submitted = st.form_submit_button("Submit")
 
         # NB
-        GaussianNB(priors=None)
         
         # Memisahkan fitur dan label kelas target
         X = output_proporsi_TD[['Topik 1', 'Topik 2', 'Topik 3']]
@@ -57,7 +56,8 @@ with modeling:
         
         # Memisahkan data menjadi data latih dan data uji
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        
+
+        GaussianNB(priors=None)
         # Membuat model Naive Bayes
         naive_bayes = GaussianNB()
         
