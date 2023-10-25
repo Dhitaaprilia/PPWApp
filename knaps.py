@@ -128,7 +128,7 @@ with modeling:
             )
             st.altair_chart(chart,use_container_width=True)
 
-with Implementasi:
+with implementasi:
     st.write("""# Implementasi""")
     import pandas as pd
     import numpy as np
