@@ -129,3 +129,4 @@ with modeling:
             st.altair_chart(chart,use_container_width=True)
 
 with Implementasi:
+    st.write("""# Implementasi""")
